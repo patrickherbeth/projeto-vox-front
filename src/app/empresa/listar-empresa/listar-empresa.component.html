@@ -1,0 +1,22 @@
+<!-- src/app/empresa/listar-empresa/listar-empresa.component.html -->
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Ações</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let empresa of empresas">
+    <td>{{ empresa.id }}</td>
+    <td>{{ empresa.nome }}</td>
+    <td>{{ empresa.descricao }}</td>
+    <td>
+      <a [routerLink]="['/empresas/editar', empresa.id]" class="btn btn-primary btn-sm">Editar</a>
+      <button *ngIf="empresa.id !== undefined" (click)="deleteEmpresa(empresa.id)" class="btn btn-danger btn-sm">Excluir</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

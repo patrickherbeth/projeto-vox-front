@@ -1,0 +1,10 @@
+<!-- src/app/empresa/detalhe-empresa/detalhe-empresa.component.html -->
+<div *ngIf="empresa">
+    <h3>{{ empresa.nome }}</h3>
+    <p><strong>ID:</strong> {{ empresa.id }}</p>
+    <p><strong>Descrição:</strong> {{ empresa.descricao }}</p>
+    <a [routerLink]="['/empresas/editar', empresa.id]" class="btn btn-primary">Editar</a>
+</div>
+<div *ngIf="!empresa">
+    <p>Empresa não encontrada.</p>
+</div>

@@ -1,0 +1,22 @@
+<!-- src/app/socio/listar-socio/listar-socio.component.html -->
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Contato</th>
+    <th>Ações</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let socio of socios">
+    <td>{{ socio.id }}</td>
+    <td>{{ socio.nome }}</td>
+    <td>{{ socio.contato }}</td>
+    <td>
+      <a [routerLink]="['/socios/editar', socio.id]" class="btn btn-primary btn-sm">Editar</a>
+      <button *ngIf="socio.id !== undefined" (click)="deleteSocio(socio.id)" class="btn btn-danger btn-sm">Excluir</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
